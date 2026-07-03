@@ -1,0 +1,163 @@
+.page-home .hero-copy h1 {
+  background: linear-gradient(135deg, #ffffff 0%, #e0ecff 48%, #bfdbfe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-home .hero-copy .lead {
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(18px);
+}
+
+.trust-pill strong {
+  position: relative;
+}
+
+.trust-pill strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.22rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(110, 231, 183, 0.9),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.page-home .trust-pill,
+.page-home .trust-pill span,
+.page-home .trust-pill strong {
+  color: #eff6ff;
+}
+
+.hero-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.hero-badge {
+  padding: 1rem 1.05rem;
+  background: rgba(238, 244, 234, 0.96);
+  border: 1px solid rgba(79, 143, 97, 0.18);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px);
+}
+
+.hero-badge strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: var(--color-primary-deep);
+}
+
+.hero-badge span {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.home-stats,
+.home-programs,
+.home-gallery,
+.home-faq {
+  background: var(--color-surface);
+}
+
+.home-trust {
+  background: linear-gradient(180deg, #f3faf1 0%, #e9f4e7 100%);
+}
+
+.home-volunteer .cta-band {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(238, 244, 234, 0.18),
+      transparent 26%
+    ),
+    linear-gradient(135deg, rgba(47, 127, 76, 0.96), rgba(63, 138, 87, 0.94));
+}
+
+.home-testimonials .testimonial-card {
+  background: rgba(238, 244, 234, 0.96);
+}
+
+.home-journey .timeline::before {
+  background: linear-gradient(
+    180deg,
+    rgba(47, 127, 76, 0.42),
+    rgba(79, 143, 97, 0.32)
+  );
+}
+
+.home-story .story-quote {
+  background: linear-gradient(
+    135deg,
+    rgba(171, 122, 69, 0.12),
+    rgba(238, 244, 234, 0.72)
+  );
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.stat-card {
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(238, 244, 234, 0.96);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(79, 143, 97, 0.18);
+}
+
+.stat-card strong {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: var(--color-primary);
+}
+
+.stat-card span {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 1080px) {
+  .hero-badge-grid,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
