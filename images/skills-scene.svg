@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" rx="64" fill="transparent"/>
+  <circle cx="224" cy="210" r="126" fill="#1d4ed8" fill-opacity=".16"/>
+  <circle cx="970" cy="220" r="146" fill="#0f766e" fill-opacity=".15"/>
+  <circle cx="916" cy="666" r="192" fill="#b57d34" fill-opacity=".10"/>
+  <rect x="258" y="238" width="686" height="420" rx="44" fill="#f8fbff" fill-opacity=".16"/>
+  <rect x="322" y="292" width="324" height="232" rx="28" fill="#0f172a" fill-opacity=".34"/>
+  <rect x="362" y="336" width="244" height="24" rx="12" fill="#eff6ff" fill-opacity=".9"/>
+  <rect x="362" y="380" width="184" height="24" rx="12" fill="#eff6ff" fill-opacity=".82"/>
+  <rect x="362" y="424" width="212" height="24" rx="12" fill="#eff6ff" fill-opacity=".78"/>
+  <rect x="710" y="292" width="178" height="232" rx="28" fill="#f6f8f2" fill-opacity=".88"/>
+  <path d="M744 340h110" stroke="#1d4ed8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M744 382h84" stroke="#4f8f61" stroke-width="18" stroke-linecap="round"/>
+  <path d="M744 424h96" stroke="#b57d34" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="384" cy="606" r="42" fill="#f6f8f2" fill-opacity=".92"/>
+  <path d="M384 648v102" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M330 694h108" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="600" cy="606" r="42" fill="#f6f8f2" fill-opacity=".92"/>
+  <path d="M600 648v102" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M546 694h108" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="816" cy="606" r="42" fill="#f6f8f2" fill-opacity=".92"/>
+  <path d="M816 648v102" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M762 694h108" stroke="#f6f8f2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M486 194c44-16 90-24 138-24 49 0 95 8 138 24" stroke="#cfe9d1" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="600" cy="176" r="34" fill="#b57d34" fill-opacity=".84"/>
+  <path d="M574 175h52" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M600 149v52" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+</svg>

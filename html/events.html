@@ -25,7 +25,7 @@
           href="../index.html"
           aria-label="AVSAR Social Foundation home"
         >
-          <span class="brand-mark"> <img src="/favicon/logo.png" /></span>
+          <span class="brand-mark"> <img src="../favicon/logo.png" /></span>
           <span class="brand-copy">
             <span>AVSAR Social Foundation</span>
             <small>Hope Into Action</small>
@@ -71,6 +71,16 @@
             </p>
           </div>
           <div class="page-hero-visual" data-animate>
+            <figure
+              class="hero-art theme-rural"
+              aria-label="Community event illustration"
+            >
+              <figcaption class="media-caption">
+                <span class="tag accent">Events</span>
+                <h3>Shared action that feels warm and visible.</h3>
+                <p>Invitations, recaps, and participation all live in one flow.</p>
+              </figcaption>
+            </figure>
             <article class="spotlight-card">
               <span class="tag accent">Participation layer</span>
               <h3>Events turn passive support into lived involvement.</h3>
@@ -92,70 +102,7 @@
               show up.
             </h2>
           </div>
-          <div class="grid-3">
-            <article class="card event-card" data-animate>
-              <span class="icon-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="presentation">
-                  <rect x="4" y="5" width="16" height="15" rx="2" />
-                  <path d="M4 9h16" />
-                  <path d="M8 3v4" />
-                  <path d="M16 3v4" />
-                </svg>
-              </span>
-              <div class="event-date">12<small>Aug</small></div>
-              <h3>Back-to-School Drive</h3>
-              <p>
-                Education support and community engagement focused on
-                confidence, readiness, and access.
-              </p>
-              <div class="program-meta">
-                <span class="tag">Education</span
-                ><span class="tag accent">Volunteer-friendly</span>
-              </div>
-              <a class="btn btn-ghost" href="contact.html">Register Interest</a>
-            </article>
-            <article class="card event-card" data-animate>
-              <span class="icon-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="presentation">
-                  <path d="M12 4v16" />
-                  <path d="M4 12h16" />
-                  <circle cx="12" cy="12" r="8" />
-                </svg>
-              </span>
-              <div class="event-date">24<small>Aug</small></div>
-              <h3>Community Health Camp</h3>
-              <p>
-                A preventive care event designed to make screening, guidance,
-                and awareness more approachable.
-              </p>
-              <div class="program-meta">
-                <span class="tag">Healthcare</span
-                ><span class="tag success">On-ground outreach</span>
-              </div>
-              <a class="btn btn-ghost" href="contact.html">Register Interest</a>
-            </article>
-            <article class="card event-card" data-animate>
-              <span class="icon-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="presentation">
-                  <path d="M8 4h8" />
-                  <path d="M6 8h12" />
-                  <path d="M7.5 8v10" />
-                  <path d="M16.5 8v10" />
-                </svg>
-              </span>
-              <div class="event-date">05<small>Sep</small></div>
-              <h3>Women Leadership Circle</h3>
-              <p>
-                Conversation, encouragement, and practical mentorship designed
-                to strengthen agency and visibility.
-              </p>
-              <div class="program-meta">
-                <span class="tag">Women</span
-                ><span class="tag accent">Mentorship</span>
-              </div>
-              <a class="btn btn-ghost" href="contact.html">Register Interest</a>
-            </article>
-          </div>
+          <div class="grid-3" data-events-upcoming></div>
         </div>
       </section>
 
@@ -167,37 +114,7 @@
               A simple calendar strip that keeps future engagement easy to scan.
             </h2>
           </div>
-          <div class="calendar-strip">
-            <article class="calendar-card" data-animate>
-              <span class="tag">August</span>
-              <h3>Education Drive</h3>
-              <p>Learning kits, support circles, and volunteer mobilization.</p>
-            </article>
-            <article class="calendar-card" data-animate>
-              <span class="tag">August</span>
-              <h3>Health Awareness</h3>
-              <p>
-                Community screenings, preventive guidance, and follow-up
-                pathways.
-              </p>
-            </article>
-            <article class="calendar-card" data-animate>
-              <span class="tag">September</span>
-              <h3>Skill Workshops</h3>
-              <p>
-                Youth and adult training sessions around confidence and
-                employability.
-              </p>
-            </article>
-            <article class="calendar-card" data-animate>
-              <span class="tag">October</span>
-              <h3>Green Action Week</h3>
-              <p>
-                Neighborhood stewardship, clean-up events, and awareness
-                activations.
-              </p>
-            </article>
-          </div>
+          <div class="calendar-strip" data-events-calendar></div>
         </div>
       </section>
 
@@ -241,44 +158,7 @@
       </section>
 
       <section class="section">
-        <div class="container grid-3">
-          <button
-            class="gallery-item theme-rural"
-            type="button"
-            data-theme="rural"
-            data-title="Community Gathering"
-            data-description="Shared learning and local participation brought together in one space."
-            data-animate
-          >
-            <span class="gallery-caption"
-              ><strong>Community Gathering</strong><br />Past event</span
-            >
-          </button>
-          <button
-            class="gallery-item theme-healthcare"
-            type="button"
-            data-theme="healthcare"
-            data-title="Health Outreach Recap"
-            data-description="A warm, organized, and approachable community health day."
-            data-animate
-          >
-            <span class="gallery-caption"
-              ><strong>Health Outreach</strong><br />Past event</span
-            >
-          </button>
-          <button
-            class="gallery-item theme-environment"
-            type="button"
-            data-theme="environment"
-            data-title="Green Drive Day"
-            data-description="A visual summary of collective environmental action and local ownership."
-            data-animate
-          >
-            <span class="gallery-caption"
-              ><strong>Green Drive Day</strong><br />Past event</span
-            >
-          </button>
-        </div>
+        <div class="container grid-3" data-events-past></div>
       </section>
 
       <section class="section">
@@ -352,6 +232,7 @@
       <a class="btn btn-primary" href="donate.html">Donate Now</a>
     </div>
 
+    <script src="../js/data/events.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

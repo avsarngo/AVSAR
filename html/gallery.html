@@ -1,200 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | AVSAR Social Foundation</title>
-  <meta name="description" content="Browse AVSAR Social Foundation's gallery experience with filters, masonry layouts, featured albums, and visual storytelling.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/gallery.css">
-</head>
-<body id="top" class="page-gallery">
-  <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="../index.html" aria-label="AVSAR Social Foundation home">
-        <span class="brand-mark"> <img src="/favicon/logo.png"></span>
-        <span class="brand-copy">
-          <span>AVSAR Social Foundation</span>
-          <small>Hope Into Action</small>
-        </span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-      </button>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="programs.html">Programs</a>
-        <a class="active" href="gallery.html">Gallery</a>
-        <a href="events.html">Events</a>
-        <a href="volunteer.html">Volunteer</a>
-        <a href="donate.html">Donate</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="btn btn-secondary" href="donate.html">Donate Now</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | AVSAR Social Foundation</title>
+    <meta
+      name="description"
+      content="Browse AVSAR Social Foundation's gallery experience with filters, masonry layouts, featured albums, and visual storytelling."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+  </head>
+  <body id="top" class="page-gallery">
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a
+          class="brand"
+          href="../index.html"
+          aria-label="AVSAR Social Foundation home"
+        >
+          <span class="brand-mark"> <img src="../favicon/logo.png" /></span>
+          <span class="brand-copy">
+            <span>AVSAR Social Foundation</span>
+            <small>Hope Into Action</small>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a class="active" href="gallery.html">Gallery</a>
+          <a href="events.html">Events</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="donate.html">Donate</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-secondary" href="donate.html">Donate Now</a>
+        </div>
       </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-grid">
+          <div class="page-hero-copy" data-animate>
+            <span class="eyebrow">Gallery</span>
+            <h1>
+              Visual storytelling that helps impact feel immediate, hopeful, and
+              human.
+            </h1>
+            <p class="lead">
+              The gallery page uses filtered cards, masonry rhythm, lightbox
+              previews, and highlighted albums to showcase moments of change
+              without overwhelming the visitor.
+            </p>
+          </div>
+          <div class="page-hero-visual" data-animate>
+            <figure
+              class="hero-art theme-story"
+              aria-label="Visual storytelling illustration"
+            >
+              <figcaption class="media-caption">
+                <span class="tag accent">Gallery</span>
+                <h3>Moments of change framed with more depth.</h3>
+                <p>Images feel stronger when context and emotion are visible.</p>
+              </figcaption>
+            </figure>
+            <article class="spotlight-card">
+              <span class="tag">Curated moments</span>
+              <h3>Real impact deserves more than a simple grid.</h3>
+              <p>
+                This layout makes room for emotion, context, and depth so each
+                visual can support the larger mission story.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div
+            class="filter-row"
+            data-filter-group
+            data-targets=".gallery-filter-item"
+          >
+            <button class="filter-btn active" type="button" data-filter="all">
+              All
+            </button>
+            <button class="filter-btn" type="button" data-filter="education">
+              Education
+            </button>
+            <button class="filter-btn" type="button" data-filter="healthcare">
+              Healthcare
+            </button>
+            <button class="filter-btn" type="button" data-filter="women">
+              Women
+            </button>
+            <button class="filter-btn" type="button" data-filter="environment">
+              Environment
+            </button>
+            <button class="filter-btn" type="button" data-filter="events">
+              Events
+            </button>
+          </div>
+
+          <div class="masonry">
+            <button
+              class="gallery-item gallery-filter-item tall theme-education"
+              type="button"
+              data-category="education"
+              data-theme="education"
+              data-title="Classroom Joy"
+              data-description="Peer learning and encouragement in spaces designed to nurture curiosity."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Classroom Joy</strong><br />Education</span
+              >
+            </button>
+            <button
+              class="gallery-item gallery-filter-item theme-healthcare"
+              type="button"
+              data-category="healthcare"
+              data-theme="healthcare"
+              data-title="Health Camp Care"
+              data-description="Preventive healthcare made more approachable through thoughtful outreach."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Health Camp Care</strong><br />Healthcare</span
+              >
+            </button>
+            <button
+              class="gallery-item gallery-filter-item tall theme-women"
+              type="button"
+              data-category="women"
+              data-theme="women"
+              data-title="Women in Conversation"
+              data-description="Empowerment begins in spaces where people feel heard, encouraged, and prepared."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Women in Conversation</strong><br />Empowerment</span
+              >
+            </button>
+            <button
+              class="gallery-item gallery-filter-item theme-environment"
+              type="button"
+              data-category="environment"
+              data-theme="environment"
+              data-title="Green Streets"
+              data-description="Community stewardship and small environmental actions with visible collective energy."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Green Streets</strong><br />Environment</span
+              >
+            </button>
+            <button
+              class="gallery-item gallery-filter-item tall theme-rural"
+              type="button"
+              data-category="events"
+              data-theme="rural"
+              data-title="Community Event Day"
+              data-description="Gatherings that bring families, volunteers, and local leaders into shared action."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Community Event Day</strong><br />Events</span
+              >
+            </button>
+            <button
+              class="gallery-item gallery-filter-item theme-skills"
+              type="button"
+              data-category="education events"
+              data-theme="skills"
+              data-title="Skill Lab Moments"
+              data-description="Practical learning environments that turn motivation into usable confidence."
+              data-animate
+            >
+              <span class="gallery-caption"
+                ><strong>Skill Lab Moments</strong><br />Skills</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-section">
+          <figure
+            class="media-surface theme-story"
+            data-animate
+            aria-label="Featured album abstract visual"
+          >
+            <figcaption class="media-caption">
+              <span class="tag accent">Featured Album</span>
+              <h3>One campaign, many moments of connection.</h3>
+            </figcaption>
+          </figure>
+          <div class="content-stack" data-animate>
+            <span class="eyebrow">Featured Album</span>
+            <h2>Turn a single campaign into a richer narrative arc.</h2>
+            <p>
+              Instead of only displaying isolated images, the featured album
+              area gives room to summarize what happened, why it mattered, and
+              how supporters can continue the journey afterward.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="events.html"
+                >See Related Events</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header" data-animate>
+            <span class="eyebrow">Video Gallery</span>
+            <h2>
+              Motion-friendly blocks for stories, recaps, and short campaign
+              films.
+            </h2>
+          </div>
+          <div class="grid-3">
+            <article class="card" data-animate>
+              <div class="program-visual theme-story"></div>
+              <h3>Impact Reel</h3>
+              <p>
+                A space for a short foundation overview or campaign highlight
+                film.
+              </p>
+            </article>
+            <article class="card" data-animate>
+              <div class="program-visual theme-healthcare"></div>
+              <h3>Health Outreach Recap</h3>
+              <p>
+                Use this slot for event coverage, awareness sessions, or
+                community testimonials.
+              </p>
+            </article>
+            <article class="card" data-animate>
+              <div class="program-visual theme-skills"></div>
+              <h3>Volunteer Stories</h3>
+              <p>
+                Showcase first-person perspectives that make participation feel
+                warm and achievable.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-band" data-animate>
+            <span class="eyebrow">Support the Story</span>
+            <h2>Help the next album reflect even more moments of change.</h2>
+            <p>
+              Power the work behind these stories through donations,
+              volunteering, and long-term collaboration.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="donate.html">Donate Now</a>
+              <a class="btn btn-ghost" href="volunteer.html">Volunteer</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../index.html">
+              <span class="brand-mark">AV</span>
+              <span class="brand-copy">
+                <span>AVSAR Social Foundation</span>
+                <small>Hope Into Action</small>
+              </span>
+            </a>
+            <p>
+              Curated visual storytelling for a nonprofit website that feels
+              modern, credible, and inspiring.
+            </p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="programs.html">Programs</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h4>Programs</h4>
+            <div class="footer-programs">
+              <a href="programs.html#education">Education</a>
+              <a href="programs.html#healthcare">Healthcare</a>
+              <a href="programs.html#women">Women Empowerment</a>
+              <a href="programs.html#environment">Environment</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            Copyright 2026 AVSAR Social Foundation. Responsive gallery
+            storytelling with filters and lightbox support.
+          </p>
+          <a class="back-to-top" href="#top">Back to Top</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-donate">
+      <a class="btn btn-primary" href="donate.html">Donate Now</a>
     </div>
-  </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container page-hero-grid">
-        <div class="page-hero-copy" data-animate>
-          <span class="eyebrow">Gallery</span>
-          <h1>Visual storytelling that helps impact feel immediate, hopeful, and human.</h1>
-          <p class="lead">The gallery page uses filtered cards, masonry rhythm, lightbox previews, and highlighted albums to showcase moments of change without overwhelming the visitor.</p>
-        </div>
-        <div class="page-hero-visual" data-animate>
-          <article class="spotlight-card">
-            <span class="tag">Curated moments</span>
-            <h3>Real impact deserves more than a simple grid.</h3>
-            <p>This layout makes room for emotion, context, and depth so each visual can support the larger mission story.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="filter-row" data-filter-group data-targets=".gallery-filter-item">
-          <button class="filter-btn active" type="button" data-filter="all">All</button>
-          <button class="filter-btn" type="button" data-filter="education">Education</button>
-          <button class="filter-btn" type="button" data-filter="healthcare">Healthcare</button>
-          <button class="filter-btn" type="button" data-filter="women">Women</button>
-          <button class="filter-btn" type="button" data-filter="environment">Environment</button>
-          <button class="filter-btn" type="button" data-filter="events">Events</button>
-        </div>
-
-        <div class="masonry">
-          <button class="gallery-item gallery-filter-item tall theme-education" type="button" data-category="education" data-theme="education" data-title="Classroom Joy" data-description="Peer learning and encouragement in spaces designed to nurture curiosity." data-animate>
-            <span class="gallery-caption"><strong>Classroom Joy</strong><br>Education</span>
-          </button>
-          <button class="gallery-item gallery-filter-item theme-healthcare" type="button" data-category="healthcare" data-theme="healthcare" data-title="Health Camp Care" data-description="Preventive healthcare made more approachable through thoughtful outreach." data-animate>
-            <span class="gallery-caption"><strong>Health Camp Care</strong><br>Healthcare</span>
-          </button>
-          <button class="gallery-item gallery-filter-item tall theme-women" type="button" data-category="women" data-theme="women" data-title="Women in Conversation" data-description="Empowerment begins in spaces where people feel heard, encouraged, and prepared." data-animate>
-            <span class="gallery-caption"><strong>Women in Conversation</strong><br>Empowerment</span>
-          </button>
-          <button class="gallery-item gallery-filter-item theme-environment" type="button" data-category="environment" data-theme="environment" data-title="Green Streets" data-description="Community stewardship and small environmental actions with visible collective energy." data-animate>
-            <span class="gallery-caption"><strong>Green Streets</strong><br>Environment</span>
-          </button>
-          <button class="gallery-item gallery-filter-item tall theme-rural" type="button" data-category="events" data-theme="rural" data-title="Community Event Day" data-description="Gatherings that bring families, volunteers, and local leaders into shared action." data-animate>
-            <span class="gallery-caption"><strong>Community Event Day</strong><br>Events</span>
-          </button>
-          <button class="gallery-item gallery-filter-item theme-skills" type="button" data-category="education events" data-theme="skills" data-title="Skill Lab Moments" data-description="Practical learning environments that turn motivation into usable confidence." data-animate>
-            <span class="gallery-caption"><strong>Skill Lab Moments</strong><br>Skills</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split-section">
-        <figure class="media-surface theme-story" data-animate aria-label="Featured album abstract visual">
-          <figcaption class="media-caption">
-            <span class="tag accent">Featured Album</span>
-            <h3>One campaign, many moments of connection.</h3>
-          </figcaption>
-        </figure>
-        <div class="content-stack" data-animate>
-          <span class="eyebrow">Featured Album</span>
-          <h2>Turn a single campaign into a richer narrative arc.</h2>
-          <p>Instead of only displaying isolated images, the featured album area gives room to summarize what happened, why it mattered, and how supporters can continue the journey afterward.</p>
-          <div class="btn-row">
-            <a class="btn btn-secondary" href="events.html">See Related Events</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header" data-animate>
-          <span class="eyebrow">Video Gallery</span>
-          <h2>Motion-friendly blocks for stories, recaps, and short campaign films.</h2>
-        </div>
-        <div class="grid-3">
-          <article class="card" data-animate>
-            <div class="program-visual theme-story"></div>
-            <h3>Impact Reel</h3>
-            <p>A space for a short foundation overview or campaign highlight film.</p>
-          </article>
-          <article class="card" data-animate>
-            <div class="program-visual theme-healthcare"></div>
-            <h3>Health Outreach Recap</h3>
-            <p>Use this slot for event coverage, awareness sessions, or community testimonials.</p>
-          </article>
-          <article class="card" data-animate>
-            <div class="program-visual theme-skills"></div>
-            <h3>Volunteer Stories</h3>
-            <p>Showcase first-person perspectives that make participation feel warm and achievable.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-band" data-animate>
-          <span class="eyebrow">Support the Story</span>
-          <h2>Help the next album reflect even more moments of change.</h2>
-          <p>Power the work behind these stories through donations, volunteering, and long-term collaboration.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="donate.html">Donate Now</a>
-            <a class="btn btn-ghost" href="volunteer.html">Volunteer</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="../index.html">
-            <span class="brand-mark">AV</span>
-            <span class="brand-copy">
-              <span>AVSAR Social Foundation</span>
-              <small>Hope Into Action</small>
-            </span>
-          </a>
-          <p>Curated visual storytelling for a nonprofit website that feels modern, credible, and inspiring.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="programs.html">Programs</a>
-            <a href="events.html">Events</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h4>Programs</h4>
-          <div class="footer-programs">
-            <a href="programs.html#education">Education</a>
-            <a href="programs.html#healthcare">Healthcare</a>
-            <a href="programs.html#women">Women Empowerment</a>
-            <a href="programs.html#environment">Environment</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Copyright 2026 AVSAR Social Foundation. Responsive gallery storytelling with filters and lightbox support.</p>
-        <a class="back-to-top" href="#top">Back to Top</a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="mobile-donate">
-    <a class="btn btn-primary" href="donate.html">Donate Now</a>
-  </div>
-
-  <script src="../js/main.js"></script>
-</body>
+    <script src="../js/main.js"></script>
+  </body>
 </html>

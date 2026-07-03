@@ -1,7 +1,7 @@
 const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
-const animatedItems = document.querySelectorAll("[data-animate]");
+let animatedItems = [];
 const counters = document.querySelectorAll("[data-counter]");
 const faqButtons = document.querySelectorAll(".faq-question");
 const filterGroups = document.querySelectorAll("[data-filter-group]");
@@ -9,10 +9,8 @@ const sliders = document.querySelectorAll("[data-slider]");
 const demoForms = document.querySelectorAll("[data-demo-form]");
 const impactInput = document.querySelector("[data-impact-input]");
 const impactOutput = document.querySelector("[data-impact-output]");
-const galleryItems = document.querySelectorAll(".gallery-item");
-const programExpandButtons = document.querySelectorAll(
-  ".program-expand-toggle",
-);
+let galleryItems = [];
+let programExpandButtons = [];
 
 const themeClassMap = {
   education: "theme-education",
@@ -23,6 +21,134 @@ const themeClassMap = {
   rural: "theme-rural",
   story: "theme-story",
 };
+
+const renderPrograms = () => {
+  const grid = document.querySelector("[data-program-grid]");
+  const programs = window.AVSAR_PROGRAMS_DATA || [];
+  if (!grid || !programs.length) return;
+
+  grid.innerHTML = programs
+    .map(
+      (program) => `
+        <article class="card program-card" id="${program.id}" data-animate>
+          <div class="program-visual ${themeClassMap[program.theme] || "theme-story"}"></div>
+          <div class="program-meta">
+            <span class="tag">${program.primaryTag}</span><span class="tag success">${program.secondaryTag}</span>
+          </div>
+          <h3>${program.title}</h3>
+          <p>${program.description}</p>
+          <div class="program-details" hidden>${program.details}</div>
+          <button class="btn btn-ghost program-expand-toggle" type="button" aria-expanded="false">
+            Read More
+          </button>
+        </article>
+      `,
+    )
+    .join("");
+};
+
+const eventIconMarkup = (theme) => {
+  switch (theme) {
+    case "healthcare":
+      return `
+        <svg viewBox="0 0 24 24" role="presentation">
+          <path d="M12 4v16" />
+          <path d="M4 12h16" />
+          <circle cx="12" cy="12" r="8" />
+        </svg>
+      `;
+    case "women":
+      return `
+        <svg viewBox="0 0 24 24" role="presentation">
+          <path d="M8 4h8" />
+          <path d="M6 8h12" />
+          <path d="M7.5 8v10" />
+          <path d="M16.5 8v10" />
+        </svg>
+      `;
+    default:
+      return `
+        <svg viewBox="0 0 24 24" role="presentation">
+          <rect x="4" y="5" width="16" height="15" rx="2" />
+          <path d="M4 9h16" />
+          <path d="M8 3v4" />
+          <path d="M16 3v4" />
+        </svg>
+      `;
+  }
+};
+
+const renderEvents = () => {
+  const eventsData = window.AVSAR_EVENTS_DATA;
+  if (!eventsData) return;
+
+  const upcomingGrid = document.querySelector("[data-events-upcoming]");
+  const calendarStrip = document.querySelector("[data-events-calendar]");
+  const pastGrid = document.querySelector("[data-events-past]");
+
+  if (upcomingGrid && eventsData.upcoming?.length) {
+    upcomingGrid.innerHTML = eventsData.upcoming
+      .map(
+        (event) => `
+          <article class="card event-card" data-animate>
+            <span class="icon-badge" aria-hidden="true">
+              ${eventIconMarkup(event.theme)}
+            </span>
+            <div class="event-date">${event.date}<small>${event.month}</small></div>
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <div class="program-meta">
+              <span class="tag">${event.primaryTag}</span><span class="tag accent">${event.secondaryTag}</span>
+            </div>
+            <a class="btn btn-ghost" href="contact.html">${event.buttonLabel}</a>
+          </article>
+        `,
+      )
+      .join("");
+  }
+
+  if (calendarStrip && eventsData.calendar?.length) {
+    calendarStrip.innerHTML = eventsData.calendar
+      .map(
+        (event) => `
+          <article class="calendar-card" data-animate>
+            <span class="tag">${event.month}</span>
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+          </article>
+        `,
+      )
+      .join("");
+  }
+
+  if (pastGrid && eventsData.past?.length) {
+    pastGrid.innerHTML = eventsData.past
+      .map(
+        (event) => `
+          <button
+            class="gallery-item theme-${event.theme}"
+            type="button"
+            data-theme="${event.theme}"
+            data-title="${event.dataTitle}"
+            data-description="${event.dataDescription}"
+            data-animate
+          >
+            <span class="gallery-caption"
+              ><strong>${event.title}</strong><br />${event.subtitle}</span
+            >
+          </button>
+        `,
+      )
+      .join("");
+  }
+};
+
+renderPrograms();
+renderEvents();
+
+animatedItems = document.querySelectorAll("[data-animate]");
+galleryItems = document.querySelectorAll(".gallery-item");
+programExpandButtons = document.querySelectorAll(".program-expand-toggle");
 
 const setHeaderState = () => {
   if (!header) return;

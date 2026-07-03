@@ -546,16 +546,13 @@ p {
   display: flex;
   align-items: center;
   padding: calc(var(--nav-height) + 3.5rem) 0 4rem;
-  background:
-    radial-gradient(
-      circle at 18% 78%,
-      rgba(79, 165, 109, 0.14),
-      transparent 20%
-    ),
-    linear-gradient(135deg, rgba(20, 73, 44, 0.92), rgba(56, 116, 76, 0.74)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f6f42'/%3E%3Cstop offset='1' stop-color='%231b4730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g)'/%3E%3Cpath d='M0 610C159 547 300 507 467 535C627 562 748 678 921 683C1104 689 1265 596 1438 567C1502 556 1557 556 1600 563V900H0Z' fill='%23ffffff' fill-opacity='.08'/%3E%3Ccircle cx='1270' cy='180' r='150' fill='%23ffffff' fill-opacity='.08'/%3E%3Ccircle cx='220' cy='720' r='180' fill='%23ab7a45' fill-opacity='.14'/%3E%3C/svg%3E");
+  background-color: #1b4931;
+  background-image:
+    linear-gradient(135deg, rgba(8, 27, 17, 0.497), rgba(183, 238, 164, 0.267)),
+    url("../images/kids bg.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before,
@@ -566,7 +563,7 @@ p {
   background:
     radial-gradient(
       circle at 18% 18%,
-      rgba(37, 99, 235, 0.18),
+      rgba(235, 37, 106, 0.222),
       transparent 24%
     ),
     radial-gradient(
@@ -628,6 +625,30 @@ p {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 1rem;
+}
+
+.page-hero-visual {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.hero-art {
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-art .media-caption {
+  inset: auto 1.4rem 1.4rem 1.4rem;
+}
+
+.hero-art .tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
 }
 
 .spotlight-card {
@@ -726,6 +747,7 @@ p {
 }
 
 .media-surface::before,
+.hero-art::before,
 .gallery-item::before,
 .program-visual::before {
   content: "";
@@ -746,6 +768,7 @@ p {
 }
 
 .media-surface::after,
+.hero-art::after,
 .gallery-item::after,
 .program-visual::after {
   content: "";
@@ -764,45 +787,59 @@ p {
 }
 
 .theme-education {
-  background:
-    linear-gradient(145deg, rgba(37, 99, 235, 0.92), rgba(96, 165, 250, 0.82)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #2563eb;
+  background-image: url("../images/education-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-healthcare {
-  background:
-    linear-gradient(145deg, rgba(14, 116, 144, 0.96), rgba(34, 197, 94, 0.82)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #0f766e;
+  background-image: url("../images/healthcare-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-women {
-  background:
-    linear-gradient(145deg, rgba(168, 85, 247, 0.9), rgba(249, 115, 22, 0.84)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #a855f7;
+  background-image: url("../images/women-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-skills {
-  background:
-    linear-gradient(145deg, rgba(37, 99, 235, 0.94), rgba(15, 118, 110, 0.86)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #1d4ed8;
+  background-image: url("../images/skills-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-environment {
-  background:
-    linear-gradient(145deg, rgba(21, 128, 61, 0.96), rgba(134, 239, 172, 0.84)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #15803d;
+  background-image: url("../images/environment-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-rural {
-  background:
-    linear-gradient(145deg, rgba(180, 83, 9, 0.92), rgba(249, 115, 22, 0.82)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #b45309;
+  background-image: url("../images/community-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .theme-story {
-  background:
-    linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(37, 99, 235, 0.86)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  background-color: #0f172a;
+  background-image: url("../images/story-scene.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .program-grid,
@@ -896,7 +933,7 @@ p {
   width: 1.5rem;
   height: 1.5rem;
   stroke: currentColor;
-  fill: none;
+  fill: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1260,14 +1297,12 @@ p {
 body:not(.page-home) .page-hero {
   background:
     radial-gradient(
-      circle at 16% 78%,
-      rgba(110, 231, 183, 0.12),
-      transparent 20%
+      circle at 14% 18%,
+      rgba(255, 255, 255, 0.08),
+      transparent 24%
     ),
-    linear-gradient(135deg, rgba(19, 52, 36, 0.88), rgba(63, 138, 87, 0.82)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 760'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f6f42'/%3E%3Cstop offset='1' stop-color='%231a4630'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='760' fill='url(%23g2)'/%3E%3Ccircle cx='1310' cy='150' r='140' fill='%23ffffff' fill-opacity='.08'/%3E%3Ccircle cx='260' cy='590' r='180' fill='%23ab7a45' fill-opacity='.12'/%3E%3Cpath d='M0 520C167 474 305 455 450 477C629 504 733 628 914 637C1087 646 1268 553 1454 526C1507 519 1557 517 1600 520V760H0Z' fill='%23ffffff' fill-opacity='.08'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
+    radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.06), transparent 20%),
+    linear-gradient(135deg, #163827 0%, #1f6f42 56%, #123023 100%);
 }
 
 body:not(.page-home) .page-hero::after {
@@ -1723,9 +1758,20 @@ body:not(.page-home) main > .section:not(.page-hero):nth-of-type(even)::before {
   .page-hero-visual {
     min-height: 28.75rem;
   }
+
+  .page-hero-visual {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 55rem) {
+  .hero {
+    background-size: cover;
+    background-position: center center;
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 2.5rem);
+  }
+
   .site-header {
     padding: 0.8rem 0;
   }
@@ -1789,11 +1835,22 @@ body:not(.page-home) main > .section:not(.page-hero):nth-of-type(even)::before {
   .page-hero-visual {
     min-height: 25rem;
   }
+
+  .page-hero-visual {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 40rem) {
   :root {
     --container: min(100% - 1.2rem, 100%);
+  }
+
+  .hero {
+    background-size: cover;
+    background-position: center top;
+    min-height: 28rem;
+    padding-top: calc(var(--nav-height) + 2rem);
   }
 
   .section {

@@ -11,6 +11,7 @@
   border: 0.125rem solid rgba(63, 138, 91, 0.25);
   position: relative;
   overflow: hidden;
+  padding: 1.35rem 1.2rem;
 }
 
 .impact-story::before {
@@ -29,12 +30,12 @@
 }
 
 .impact-story .story-highlight {
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.375rem;
-  height: 4.375rem;
+  width: 3.75rem;
+  height: 3.75rem;
   background: linear-gradient(
     135deg,
     var(--color-leaf-soft),
@@ -46,8 +47,8 @@
 }
 
 .impact-story .story-highlight svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
   stroke: currentColor;
   fill: none;
   stroke-width: 1.75;
@@ -56,8 +57,8 @@
 }
 
 .impact-story h3 {
-  font-size: 1.35rem;
-  margin: 0.8rem 0 1.2rem 0;
+  font-size: 1.15rem;
+  margin: 0.6rem 0 0.9rem 0;
   color: var(--color-primary-deep);
   font-weight: 700;
 }
@@ -71,11 +72,11 @@
 }
 
 .impact-story ul li {
-  padding: 0.6rem 0;
+  padding: 0.48rem 0;
   border-bottom: 0.0625rem solid rgba(63, 138, 91, 0.15);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .impact-story ul li:last-child {
@@ -93,4 +94,8 @@
   margin-top: 0.6rem;
   color: var(--color-primary-deep);
   font-style: italic;
+}
+
+.donation-impact-grid {
+  gap: 1rem;
 }
