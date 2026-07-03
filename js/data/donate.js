@@ -12,6 +12,6 @@ window.AVSAR_DONATE_DATA = {
     accountNumber: "1234 5678 9012",
     ifsc: "SAMP0001234",
     branch: "Main Branch",
-    note: "Replace these placeholder details with your real bank information.",
+    note: "DO not Make payment , it is still under development ",
   },
 };
