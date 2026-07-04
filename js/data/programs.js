@@ -1,74 +1,86 @@
 window.AVSAR_PROGRAMS_DATA = [
   {
     id: "education",
-    category: "education",
     theme: "education",
-    primaryTag: "Education",
-    secondaryTag: "Foundational",
-    title: "Education",
+    icon: "book",
+    title: "Free Education Initiative",
     description:
-      "Learning support, academic continuity, enrichment activities, and access-focused outreach for children and youth.",
-    details:
-      "Detailed support includes learning kits, tutoring, school partnerships, and community learning spaces for children and youth.",
+      "Providing quality education to underprivileged children with a focus on creativity and character development.",
+    bullets: [
+      "Free learning materials",
+      "Qualified teachers",
+      "Interactive learning methods",
+      "Character building activities",
+    ],
   },
   {
     id: "healthcare",
-    category: "healthcare",
     theme: "healthcare",
-    primaryTag: "Healthcare",
-    secondaryTag: "Preventive care",
-    title: "Healthcare",
+    icon: "heart",
+    title: "Health & Hygiene Awareness",
     description:
-      "Health awareness, access support, community camps, and wellbeing initiatives designed with dignity and ease.",
-    details:
-      "These initiatives combine health camps, awareness sessions, referrals, and follow-up care to support preventive wellbeing.",
+      "Building healthier communities through comprehensive health education and hygiene awareness programs.",
+    bullets: [
+      "Health workshops",
+      "Hygiene education",
+      "Medical camps",
+      "Nutrition awareness",
+    ],
   },
   {
     id: "women",
-    category: "women",
     theme: "women",
-    primaryTag: "Women Empowerment",
-    secondaryTag: "Agency",
     title: "Women Empowerment",
+    icon: "target",
     description:
-      "Programs that strengthen confidence, participation, safety, leadership, and financial or social independence.",
-    details:
-      "Includes leadership circles, financial literacy workshops, safe spaces, and peer mentoring for agency and income confidence.",
+      "Focusing on women's education, skill development, and creating opportunities for economic participation.",
+    bullets: [
+      "Women's education programs",
+      "Skill training workshops",
+      "Microfinance support",
+      "Leadership development",
+    ],
   },
   {
     id: "skills",
-    category: "skills",
     theme: "skills",
-    primaryTag: "Skill Development",
-    secondaryTag: "Livelihoods",
-    title: "Skill Development",
+    icon: "spark",
+    title: "Skill Development Programs",
     description:
-      "Hands-on training, mentoring, and pathways to employability or entrepreneurship for youth and adults.",
-    details:
-      "Hands-on vocational workshops, digital literacy labs, mentorship, and market-facing pathways help participants prepare for work.",
-  },
-  {
-    id: "environment",
-    category: "environment",
-    theme: "environment",
-    primaryTag: "Environment",
-    secondaryTag: "Stewardship",
-    title: "Environment",
-    description:
-      "Community participation in cleaner surroundings, awareness campaigns, and locally rooted environmental action.",
-    details:
-      "Community actions include clean-ups, tree planting, waste awareness, and local stewardship campaigns rooted in community care.",
+      "Empowering youth and women with future-ready skills to achieve self-reliance and economic independence.",
+    bullets: [
+      "Technical training",
+      "Soft skills development",
+      "Entrepreneurship guidance",
+      "Job placement support",
+    ],
   },
   {
     id: "rural",
-    category: "rural",
     theme: "rural",
-    primaryTag: "Rural Development",
-    secondaryTag: "Infrastructure",
-    title: "Rural Development",
+    icon: "users",
+    title: "Community Empowerment",
     description:
-      "Holistic support approaches that strengthen resilience, access, and wellbeing in underserved local contexts.",
-    details:
-      "Focused rural support helps strengthen basic infrastructure, water access, livelihoods, and local market connections.",
+      "Strengthening communities by facilitating access to government schemes and social support systems.",
+    bullets: [
+      "Government scheme awareness",
+      "Documentation support",
+      "Community meetings",
+      "Social advocacy",
+    ],
+  },
+  {
+    id: "environment",
+    theme: "environment",
+    icon: "globe",
+    title: "SDG Alignment",
+    description:
+      "Working towards Sustainable Development Goals, particularly Quality Education, Health, and Reduced Inequalities.",
+    bullets: [
+      "SDG 4: Quality Education",
+      "SDG 3: Good Health",
+      "SDG 10: Reduced Inequalities",
+      "Sustainable impact",
+    ],
   },
 ];

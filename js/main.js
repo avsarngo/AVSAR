@@ -22,15 +22,77 @@ let donationBankNote = null;
 let galleryItems = [];
 let programExpandButtons = [];
 
-const themeClassMap = {
-  education: "theme-education",
-  healthcare: "theme-healthcare",
-  women: "theme-women",
-  skills: "theme-skills",
-  environment: "theme-environment",
-  rural: "theme-rural",
-  story: "theme-story",
+const programToneClassMap = {
+  education: "tone-education",
+  healthcare: "tone-healthcare",
+  women: "tone-women",
+  skills: "tone-skills",
+  environment: "tone-sdg",
+  rural: "tone-community",
 };
+
+const programIconMap = {
+  book: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <path d="M6 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2V6a2 2 0 0 1 2-2Z" />
+      <path d="M12 4h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2h-6" />
+      <path d="M8 8h4" />
+      <path d="M8 11h4" />
+    </svg>
+  `,
+  spark: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <path d="M12 3v2.25" />
+      <path d="M12 18.75V21" />
+      <path d="M4.5 8.25l1.6 1.6" />
+      <path d="M17.9 15.65l1.6 1.6" />
+      <path d="M3 12h2.25" />
+      <path d="M18.75 12H21" />
+      <path d="M6.1 17.25l1.6-1.6" />
+      <path d="M15.9 7.45l1.6-1.6" />
+      <path d="M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" />
+    </svg>
+  `,
+  heart: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <path d="M20.5 8.5c0 5.4-8.5 11-8.5 11S3.5 13.9 3.5 8.5A4.5 4.5 0 0 1 12 6.2a4.5 4.5 0 0 1 8.5 2.3Z" />
+    </svg>
+  `,
+  users: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <path d="M8.5 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+      <path d="M15.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+      <path d="M4.5 19a4 4 0 0 1 8 0" />
+      <path d="M13 19a4.5 4.5 0 0 1 6.5-4" />
+    </svg>
+  `,
+  target: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="12" cy="12" r="1.4" />
+    </svg>
+  `,
+  globe: `
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M3.5 12h17" />
+      <path d="M12 3.5c2.8 2.8 4.1 5.7 4.1 8.5S14.8 18.2 12 20.5c-2.8-2.3-4.1-5.2-4.1-8.5S9.2 6.3 12 3.5Z" />
+    </svg>
+  `,
+};
+
+const escapeHtml = (value) =>
+  String(value).replace(/[&<>"']/g, (character) => {
+    const escapeMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return escapeMap[character] || character;
+  });
 
 const renderPrograms = () => {
   const grid = document.querySelector("[data-program-grid]");
@@ -40,17 +102,21 @@ const renderPrograms = () => {
   grid.innerHTML = programs
     .map(
       (program) => `
-        <article class="card program-card" id="${program.id}" data-animate>
-          <div class="program-visual ${themeClassMap[program.theme] || "theme-story"}"></div>
-          <div class="program-meta">
-            <span class="tag">${program.primaryTag}</span><span class="tag success">${program.secondaryTag}</span>
-          </div>
-          <h3>${program.title}</h3>
-          <p>${program.description}</p>
-          <div class="program-details" hidden>${program.details}</div>
-          <button class="btn btn-ghost program-expand-toggle" type="button" aria-expanded="false">
-            Read More
-          </button>
+        <article
+          class="card program-card ${programToneClassMap[program.theme] || "tone-story"}"
+          id="${escapeHtml(program.id)}"
+          data-animate
+        >
+          <span class="program-icon" aria-hidden="true">
+            ${programIconMap[program.icon] || programIconMap.book}
+          </span>
+          <h3>${escapeHtml(program.title)}</h3>
+          <p>${escapeHtml(program.description)}</p>
+          <ul class="program-points">
+            ${(program.bullets || [])
+              .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
+              .join("")}
+          </ul>
         </article>
       `,
     )

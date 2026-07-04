@@ -1,49 +1,35 @@
-/* =====================================================================
-   AVSAR — Dark Glassmorphism Theme Override (v2)
-   ---------------------------------------------------------------------
-   Save as /css/theme-dark.css and add ONE line to the <head> of every
-   page, after the existing stylesheet(s):
-
-     index.html          -> <link rel="stylesheet" href="css/theme-dark.css" />
-     everything in /html -> <link rel="stylesheet" href="../css/theme-dark.css" />
-
-   v2 changes from the first pass:
-   - Hero backgrounds KEEP bg.png — a dark tint gradient sits on top of
-     the photo instead of replacing it, so you get the mood without
-     losing the image.
-   - No gradient-clipped ("see-through") headings anymore — solid,
-     high-contrast text with a soft drop shadow for legibility over
-     imagery.
-   - Tags, badges, and icon chips no longer use same-hue text-on-tint
-     (which is what was reading as "blended"); text is now a distinct,
-     brighter tone than its background.
-   - Glass panels are a touch more opaque with a subtle top highlight
-     and crisper border, closer to premium dashboard UI than a hazy
-     overlay.
-   ===================================================================== */
-
 :root {
-  --color-primary: #34d399;
-  --color-primary-deep: #a7f3d0;
-  --color-accent: #60a5fa;
-  --color-accent-soft: rgba(96, 165, 250, 0.16);
-  --color-success: #34d399;
-  --color-success-soft: rgba(52, 211, 153, 0.16);
-  --color-leaf: #34d399;
-  --color-leaf-soft: rgba(52, 211, 153, 0.12);
-  --color-earth: #fbbf24;
-  --color-text: #f8fafc;
-  --color-muted: #c3cbd8;
-  --color-border: rgba(255, 255, 255, 0.14);
-  --color-surface: rgba(255, 255, 255, 0.07);
-  --color-surface-2: rgba(255, 255, 255, 0.09);
-  --color-surface-3: rgba(255, 255, 255, 0.11);
-  --color-dark: #060a14;
-  --color-dark-soft: #0d1424;
-  --color-overlay: rgba(6, 10, 20, 0.78);
-  --shadow-sm: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.32);
-  --shadow-md: 0 1.5rem 3.75rem rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 2rem 5.625rem rgba(0, 0, 0, 0.5);
+  --color-primary: #34d399 !important;
+  --color-primary-deep: #a7f3d0 !important;
+  --color-accent: #60a5fa !important;
+  --color-accent-soft: rgba(96, 165, 250, 0.16) !important;
+  --color-success: #34d399 !important;
+  --color-success-soft: rgba(52, 211, 153, 0.16) !important;
+  --color-leaf: #34d399 !important;
+  --color-leaf-soft: rgba(52, 211, 153, 0.12) !important;
+  --color-earth: #fbbf24 !important;
+  --color-text: #f8fafc !important;
+  --color-muted: #c3cbd8 !important;
+  --color-border: rgba(255, 255, 255, 0.14) !important;
+  --color-surface: rgba(255, 255, 255, 0.07) !important;
+  --color-surface-2: rgba(255, 255, 255, 0.09) !important;
+  --color-surface-3: rgba(255, 255, 255, 0.11) !important;
+  --color-dark: #060a14 !important;
+  --color-dark-soft: #0d1424 !important;
+  --color-overlay: rgba(6, 10, 20, 0.78) !important;
+  --shadow-sm: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.32) !important;
+  --shadow-md: 0 1.5rem 3.75rem rgba(0, 0, 0, 0.4) !important;
+  --shadow-lg: 0 2rem 5.625rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Belt-and-braces for the home stat cards specifically, in case any
+   page-specific stylesheet still wins the cascade */
+.stat-card strong {
+  color: #6ee7b7 !important;
+}
+
+.stat-card span {
+  color: #eef2f7 !important;
 }
 
 /* ---------- Base page background ---------- */
@@ -51,8 +37,16 @@ html,
 body {
   background-color: #0a0f1e !important;
   background-image:
-    radial-gradient(circle at 18% 15%, rgba(26, 54, 93, 0.55) 0%, transparent 42%),
-    radial-gradient(circle at 82% 78%, rgba(6, 78, 59, 0.5) 0%, transparent 42%),
+    radial-gradient(
+      circle at 18% 15%,
+      rgba(26, 54, 93, 0.55) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 78%,
+      rgba(6, 78, 59, 0.5) 0%,
+      transparent 42%
+    ),
     radial-gradient(circle at 50% 50%, rgba(30, 27, 75, 0.55) 0%, #0a0f1e 100%) !important;
   background-attachment: fixed !important;
   color: #f8fafc !important;
@@ -63,7 +57,10 @@ body {
 main::before {
   display: block !important;
   opacity: 0.5 !important;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) !important;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  ) !important;
   background-size: 1.5rem 1.5rem !important;
   mix-blend-mode: normal;
 }
@@ -98,7 +95,12 @@ body:not(.page-home) main > .section:not(.page-hero):nth-of-type(odd) {
 body.page-home .hero {
   background-color: #0a0f1e !important;
   background-image:
-    linear-gradient(160deg, rgba(6, 10, 20, 0.82) 0%, rgba(8, 14, 28, 0.62) 55%, rgba(6, 10, 20, 0.86) 100%),
+    linear-gradient(
+      160deg,
+      rgba(6, 10, 20, 0.82) 0%,
+      rgba(8, 14, 28, 0.62) 55%,
+      rgba(6, 10, 20, 0.86) 100%
+    ),
     radial-gradient(circle at 20% 15%, rgba(26, 54, 93, 0.4), transparent 45%),
     radial-gradient(circle at 85% 25%, rgba(6, 78, 59, 0.35), transparent 45%),
     url("../images/bg.png") !important;
@@ -110,7 +112,12 @@ body.page-home .hero {
 body:not(.page-home) .page-hero {
   background-color: #0a0f1e !important;
   background-image:
-    linear-gradient(160deg, rgba(6, 10, 20, 0.85) 0%, rgba(8, 14, 28, 0.6) 55%, rgba(6, 10, 20, 0.88) 100%),
+    linear-gradient(
+      160deg,
+      rgba(6, 10, 20, 0.85) 0%,
+      rgba(8, 14, 28, 0.6) 55%,
+      rgba(6, 10, 20, 0.88) 100%
+    ),
     radial-gradient(circle at 15% 20%, rgba(26, 54, 93, 0.35), transparent 45%),
     radial-gradient(circle at 85% 25%, rgba(6, 78, 59, 0.3), transparent 45%),
     url("../images/bg.png") !important;
@@ -126,8 +133,16 @@ body:not(.page-home) .page-hero::after {
 .hero::before,
 .page-hero::before {
   background:
-    radial-gradient(circle at 18% 18%, rgba(96, 165, 250, 0.16), transparent 26%),
-    radial-gradient(circle at 78% 20%, rgba(52, 211, 153, 0.14), transparent 26%),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(96, 165, 250, 0.16),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(52, 211, 153, 0.14),
+      transparent 26%
+    ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent) !important;
 }
 
@@ -242,7 +257,11 @@ body:not(.page-home) .page-hero-copy p {
 }
 
 .page-about .founder-portrait {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.16), rgba(52, 211, 153, 0.12)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.16),
+    rgba(52, 211, 153, 0.12)
+  ) !important;
 }
 
 /* ---------- Tags, icon badges, eyebrows — distinct hue from text ---------- */
@@ -269,7 +288,11 @@ body:not(.page-home) .page-hero-copy p {
 }
 
 .icon-badge {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.22), rgba(52, 211, 153, 0.2)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.22),
+    rgba(52, 211, 153, 0.2)
+  ) !important;
   color: #eef2f7 !important;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -355,8 +378,16 @@ p,
 /* ---------- Footer ---------- */
 .site-footer {
   background:
-    radial-gradient(circle at bottom left, rgba(52, 211, 153, 0.14), transparent 24%),
-    radial-gradient(circle at top right, rgba(96, 165, 250, 0.18), transparent 26%),
+    radial-gradient(
+      circle at bottom left,
+      rgba(52, 211, 153, 0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(96, 165, 250, 0.18),
+      transparent 26%
+    ),
     linear-gradient(180deg, #060a14 0%, #030509 100%) !important;
 }
 
@@ -367,5 +398,65 @@ p,
 @media (prefers-reduced-motion: reduce) {
   * {
     backdrop-filter: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Mobile performance fallback
+   ---------------------------------------------------------------------
+   backdrop-filter: blur() is expensive to composite, and with this many
+   glass panels on one page it can get janky on mid/low-end phones —
+   every one of them forces a re-sample of whatever is behind it on
+   every scroll frame. Below ~48rem (and on any coarse/touch pointer,
+   which usually means a phone or tablet regardless of screen size) we
+   drop the blur entirely and use a plain, slightly more opaque dark
+   panel instead. Same palette, same borders — just no blur cost.
+   ------------------------------------------------------------------- */
+@media (max-width: 48rem), (pointer: coarse) {
+  html,
+  body {
+    background-attachment: scroll !important;
+  }
+
+  .nav-shell,
+  .site-header.scrolled,
+  .card,
+  .card.soft,
+  .page-badge,
+  .hero-badge,
+  .timeline-item,
+  .partner-chip,
+  .faq-item,
+  .form-shell,
+  .transparency-shell,
+  .step-card,
+  .calendar-card,
+  .stat-card,
+  .filter-btn,
+  .social-link,
+  .donation-panel,
+  .qr-shell,
+  .donation-amount-readout,
+  .bank-details div,
+  .amount-chip,
+  .event-date,
+  .spotlight-card,
+  .page-contact .contact-card,
+  .page-about .team-grid .card,
+  .page-about .certificate-grid .card,
+  .page-about .founder-card,
+  .page-about .founder-portrait,
+  .page-programs .program-card,
+  .page-events .event-card,
+  .page-events .calendar-card,
+  .page-volunteer .benefit-card,
+  .page-volunteer .step-card,
+  .page-volunteer .form-shell,
+  .impact-story,
+  .donation-action-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(18, 24, 38, 0.86) !important;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.3) !important;
   }
 }
