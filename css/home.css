@@ -161,3 +161,57 @@
   }
 }
 
+@media (max-width: 40rem) {
+  .page-home .hero-copy {
+    padding: 1rem 0.95rem;
+    border-radius: 1.35rem;
+    background: linear-gradient(
+      180deg,
+      rgba(16, 37, 24, 0.72),
+      rgba(16, 37, 24, 0.52)
+    );
+    border: 0.0625rem solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 1.25rem 2.75rem rgba(7, 18, 12, 0.22);
+    backdrop-filter: blur(0.9rem);
+  }
+
+  .page-home .hero-copy .eyebrow {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ecfdf5;
+  }
+
+  .page-home .hero-copy h1 {
+    max-width: 9.5ch;
+    font-size: clamp(1.95rem, 9vw, 2.5rem);
+    line-height: 1.05;
+  }
+
+  .page-home .hero-copy .lead {
+    max-width: none;
+    margin-bottom: 0;
+    font-size: 0.94rem;
+    line-height: 1.5;
+    color: rgba(241, 245, 249, 0.92);
+  }
+
+  .trust-strip {
+    display: none;
+  }
+
+  .hero-badge-grid {
+    gap: 0.75rem;
+  }
+
+  .hero-badge {
+    padding: 0.8rem 0.85rem;
+    border-radius: 1rem;
+  }
+
+  .hero-badge strong {
+    font-size: 0.9rem;
+  }
+
+  .hero-badge span {
+    font-size: 0.82rem;
+  }
+}

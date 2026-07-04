@@ -98,3 +98,25 @@
     height: 4.25rem;
   }
 }
+
+@media (max-width: 40rem) {
+  .page-about .founder-portrait {
+    padding: 0.8rem;
+    border-radius: 1.4rem;
+  }
+
+  .page-about .founder-card {
+    padding: 1.15rem;
+    border-radius: 1.4rem;
+  }
+
+  .page-about .founder-card h2 {
+    font-size: clamp(1.5rem, 6.5vw, 1.9rem);
+    line-height: 1.12;
+  }
+
+  .page-about .founder-quote {
+    margin-top: 1.1rem;
+    padding: 1rem 1.05rem;
+  }
+}
