@@ -93,44 +93,7 @@ const renderEvents = () => {
   const eventsData = window.AVSAR_EVENTS_DATA;
   if (!eventsData) return;
 
-  const upcomingGrid = document.querySelector("[data-events-upcoming]");
-  const calendarStrip = document.querySelector("[data-events-calendar]");
   const pastGrid = document.querySelector("[data-events-past]");
-
-  if (upcomingGrid && eventsData.upcoming?.length) {
-    upcomingGrid.innerHTML = eventsData.upcoming
-      .map(
-        (event) => `
-          <article class="card event-card" data-animate>
-            <span class="icon-badge" aria-hidden="true">
-              ${eventIconMarkup(event.theme)}
-            </span>
-            <div class="event-date">${event.date}<small>${event.month}</small></div>
-            <h3>${event.title}</h3>
-            <p>${event.description}</p>
-            <div class="program-meta">
-              <span class="tag">${event.primaryTag}</span><span class="tag accent">${event.secondaryTag}</span>
-            </div>
-            <a class="btn btn-ghost" href="contact.html">${event.buttonLabel}</a>
-          </article>
-        `,
-      )
-      .join("");
-  }
-
-  if (calendarStrip && eventsData.calendar?.length) {
-    calendarStrip.innerHTML = eventsData.calendar
-      .map(
-        (event) => `
-          <article class="calendar-card" data-animate>
-            <span class="tag">${event.month}</span>
-            <h3>${event.title}</h3>
-            <p>${event.description}</p>
-          </article>
-        `,
-      )
-      .join("");
-  }
 
   if (pastGrid && eventsData.past?.length) {
     pastGrid.innerHTML = eventsData.past
