@@ -1,5 +1,5 @@
 window.AVSAR_DONATE_DATA = {
-  upi: "avsarsocialfoun344197.rzp@rxairtel",
+  upi: "12139286@cbin",
   slider: {
     min: 100,
     max: 5000,
