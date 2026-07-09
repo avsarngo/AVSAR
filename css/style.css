@@ -24,7 +24,8 @@
   --radius-md: 1.5rem;
   --radius-lg: 2rem;
   --container: min(73.75rem, calc(100% - 2rem));
-  --section-space: clamp(5.8rem, 8vw, 7.5rem);
+  /* --section-space: clamp(5.8rem, 8vw, 7.5rem); */
+  --section-space: clamp(1rem, 4vw, 7rem);
   --transition: 220ms ease;
   --nav-height: 5.375rem;
 }
@@ -1028,6 +1029,11 @@ p {
   color: var(--color-primary-deep);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
+}
+
+.social-icon {
+  margin-right: 0.4rem;
+  font-size: larger;
 }
 
 .icon-badge svg {
