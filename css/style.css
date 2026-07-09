@@ -438,6 +438,10 @@ p {
   text-transform: uppercase;
 }
 
+.nav-current-page {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -2123,10 +2127,6 @@ body::after {
     display: none;
   }
 
-  .hero-badge-grid {
-    order: 2;
-  }
-
   .site-header {
     padding: 0.55rem 0;
   }
@@ -2139,21 +2139,49 @@ body::after {
 
   .brand {
     gap: 0.65rem;
+    width: 100%;
+    min-width: 0;
   }
 
   .brand-mark {
-    width: 5rem;
+    width: 4.1rem;
+  }
+
+  .brand-copy {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .brand-copy span {
     display: block;
-    max-width: 7.5rem;
+    max-width: 6.8rem;
     line-height: 1.2;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .brand-copy small {
-    font-size: 0.62rem;
+    font-size: 0.57rem;
+  }
+
+  .nav-current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    margin-left: auto;
+    min-height: 2.35rem;
+    min-width: 4.85rem;
+    padding: 0 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 0.0625rem solid rgba(79, 143, 97, 0.18);
+    color: rgba(30, 41, 59, 0.78);
+    font-family: "Inter", sans-serif;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-transform: lowercase;
   }
 
   .nav-toggle {
@@ -2197,7 +2225,6 @@ body::after {
   .page-about .founder-card,
   .page-about .founder-portrait,
   .page-home .hero-copy,
-  .hero-badge,
   .page-badge,
   .donation-panel,
   .impact-story {
@@ -2417,16 +2444,24 @@ body::after {
   }
 
   .brand-mark {
-    width: 4.5rem;
+    width: 3.8rem;
   }
 
   .brand-copy span {
-    max-width: 6rem;
-    font-size: 0.88rem;
+    max-width: 5.6rem;
+    font-size: 0.8rem;
   }
 
   .brand-copy small {
-    font-size: 0.6rem;
+    font-size: 0.53rem;
+  }
+
+  .nav-current-page {
+    min-height: 2.2rem;
+    min-width: 3.9rem;
+    padding: 0 0.6rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
   }
 
   .nav-toggle {

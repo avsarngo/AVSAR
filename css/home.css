@@ -53,36 +53,6 @@
   color: #eff6ff;
 }
 
-.hero-badge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.hero-badge {
-  padding: 1rem 1.05rem;
-  background: rgba(238, 244, 234, 0.96);
-  border: 0.0625rem solid rgba(79, 143, 97, 0.18);
-  border-radius: 1.375rem;
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(0.5rem);
-}
-
-.hero-badge strong {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: var(--color-primary-deep);
-}
-
-.hero-badge span {
-  display: block;
-  color: var(--color-muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
 .home-stats,
 .home-programs,
 .home-gallery,
@@ -155,7 +125,6 @@
 }
 
 @media (max-width: 67.5rem) {
-  .hero-badge-grid,
   .stat-grid {
     grid-template-columns: 1fr;
   }
@@ -168,32 +137,6 @@
     border: 0;
     box-shadow: none;
     backdrop-filter: none;
-  }
-
-  .stat-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    column-gap: 0.9rem;
-    padding: 0.95rem 1.05rem;
-    border-radius: 0.9rem;
-    box-shadow: 0 0.3rem 0.9rem rgba(15, 23, 42, 0.06);
-  }
-
-  .stat-card strong {
-    grid-row: 1 / 3;
-    font-size: 1.7rem;
-  }
-
-  .stat-card span {
-    margin-top: 0;
-    font-size: 0.92rem;
-  }
-
-  .stat-card p {
-    grid-column: 2;
-    margin-bottom: 0;
-    font-size: 0.85rem;
   }
 
   .page-home .hero-copy .eyebrow {
@@ -217,53 +160,6 @@
 
   .trust-strip {
     display: none;
-  }
-
-  .hero-badge-grid {
-    gap: 0.75rem;
-  }
-
-  .hero-badge {
-    padding: 0.8rem 0.85rem;
-    border-radius: 1rem;
-  }
-
-  .hero-badge strong {
-    font-size: 0.9rem;
-  }
-
-  .hero-badge span {
-    font-size: 0.82rem;
-  }
-}
-
-@media (max-width: 40rem) {
-  .trust-strip {
-    display: none;
-  }
-
-  .hero-badge-grid {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-
-  .hero-badge {
-    padding: 0.85rem 0.95rem;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .hero-badge strong {
-    margin-bottom: 0;
-    font-size: 0.88rem;
-    white-space: nowrap;
-  }
-
-  .hero-badge span {
-    font-size: 0.8rem;
-    line-height: 1.35;
   }
 
   .stat-grid {

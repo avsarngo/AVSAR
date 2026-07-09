@@ -8,14 +8,6 @@ body.page-programs .page-hero {
   background-repeat: no-repeat;
 }
 
-body.page-programs .spotlight-card {
-  background:
-    linear-gradient(145deg, rgba(10, 30, 76, 0.65), rgba(37, 99, 235, 0.58)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
-  color: #fff;
-  box-shadow: var(--shadow-lg);
-}
-
 .page-programs .section-header {
   max-width: 50rem;
 }
@@ -147,29 +139,6 @@ body.page-programs .spotlight-card {
   background:
     linear-gradient(180deg, rgba(255, 248, 235, 0.99), rgba(251, 240, 220, 0.95));
   border-color: rgba(243, 194, 124, 0.4);
-}
-
-@media (max-width: 40rem) {
-  .page-programs .program-card {
-    gap: 0.8rem;
-    padding: 1.1rem 1.05rem;
-    border-radius: 1.05rem;
-  }
-
-  .page-programs .program-icon {
-    width: 3.55rem;
-    height: 3.55rem;
-    border-radius: 0.95rem;
-  }
-
-  .page-programs .program-icon svg {
-    width: 1.55rem;
-    height: 1.55rem;
-  }
-
-  .page-programs .program-points {
-    gap: 0.55rem;
-  }
 }
 
 @media (max-width: 40rem) {

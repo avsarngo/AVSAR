@@ -8,14 +8,6 @@ body.page-about .page-hero {
   background-repeat: no-repeat;
 }
 
-body.page-about .spotlight-card {
-  background:
-    linear-gradient(145deg, rgba(10, 30, 76, 0.65), rgba(37, 99, 235, 0.58)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
-  color: #fff;
-  box-shadow: var(--shadow-lg);
-}
-
 .page-about .team-grid .card,
 .page-about .certificate-grid .card {
   background: linear-gradient(
@@ -122,29 +114,8 @@ body.page-about .spotlight-card {
 }
 
 @media (max-width: 40rem) {
-  .page-about .founder-portrait {
-    padding: 0.8rem;
-    border-radius: 1.4rem;
-  }
-
-  .page-about .founder-card {
-    padding: 1.15rem;
-    border-radius: 1.4rem;
-  }
-
-  .page-about .founder-card h2 {
-    font-size: clamp(1.5rem, 6.5vw, 1.9rem);
-    line-height: 1.12;
-  }
-
-  .page-about .founder-quote {
-    margin-top: 1.1rem;
-    padding: 1rem 1.05rem;
-  }
-}
-
-@media (max-width: 40rem) {
   .page-about .founder-layout {
+    grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
@@ -155,15 +126,22 @@ body.page-about .spotlight-card {
     border-radius: 1.3rem;
   }
 
+  .page-about .founder-card {
+    padding: 1.15rem;
+    border-radius: 1.4rem;
+    text-align: left;
+  }
+
+  .page-about .founder-card h2 {
+    font-size: clamp(1.5rem, 6.5vw, 1.9rem);
+    line-height: 1.12;
+  }
+
   .page-about .founder-portrait::after {
     width: 3.2rem;
     height: 3.2rem;
     right: 0.6rem;
     bottom: -0.5rem;
-  }
-
-  .page-about .founder-card {
-    text-align: left;
   }
 
   .page-about .founder-quote {

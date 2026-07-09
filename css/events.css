@@ -8,14 +8,6 @@ body.page-events .page-hero {
   background-repeat: no-repeat;
 }
 
-body.page-events .spotlight-card {
-  background:
-    linear-gradient(145deg, rgba(10, 30, 76, 0.65), rgba(37, 99, 235, 0.58)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
-  color: #fff;
-  box-shadow: var(--shadow-lg);
-}
-
 .page-events-past .section-header {
   margin-bottom: 2rem;
 }
@@ -157,29 +149,6 @@ body.page-events .spotlight-card {
     margin-bottom: 1.5rem;
   }
 
-  .events-past-list {
-    gap: 1rem;
-  }
-
-  .event-recap {
-    gap: 0.9rem;
-    padding: 0.85rem;
-  }
-
-  .event-recap__media {
-    border-radius: 1.05rem;
-  }
-
-  .event-recap__caption {
-    font-size: 0.84rem;
-  }
-
-  .event-recap__notes {
-    gap: 0.55rem;
-  }
-}
-
-@media (max-width: 40rem) {
   .events-past-list {
     gap: 0.9rem;
   }
