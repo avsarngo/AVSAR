@@ -2,7 +2,7 @@ window.AVSAR_DONATE_DATA = {
   upi: "12139286@cbin",
   paymentPage: "https://pages.razorpay.com/donate-avsarsocialfoundation",
   slider: {
-    min: 1,
+    min: 50,
     max: 5000,
     step: 50,
     defaultAmount: 499,
