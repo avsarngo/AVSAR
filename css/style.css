@@ -662,13 +662,16 @@ p {
   animation: rise-in 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.hero-art,
-.donation-panel {
+.hero-art {
   animation-name: rise-in, float-gentle;
   animation-duration: 800ms, 7s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
   animation-fill-mode: both, both;
   animation-iteration-count: 1, infinite;
+}
+
+.donation-panel {
+  animation: rise-in 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-art {
@@ -1692,10 +1695,7 @@ body:not(.page-home) main > .section:not(.page-hero):nth-of-type(even)::before {
   bottom: 1rem;
   z-index: 999;
   display: none;
-  transition:
-    left 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    right 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    bottom 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: none;
 }
 
 .mobile-donate .btn {
@@ -1707,13 +1707,7 @@ body:not(.page-home) main > .section:not(.page-hero):nth-of-type(even)::before {
   overflow: hidden;
   white-space: nowrap;
   box-shadow: 0 1.125rem 2.25rem rgba(249, 115, 22, 0.3);
-  transition:
-    width 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    height 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    padding 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-radius 380ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    font-size 260ms ease,
-    box-shadow 380ms ease;
+  transition: none;
 }
 
 .mobile-donate .btn::before {
@@ -2055,6 +2049,11 @@ body::after {
   body::after {
     opacity: 0.22;
     filter: blur(1.65rem);
+    animation: none;
+  }
+
+  .hero-art {
+    animation: rise-in 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   h1 {
@@ -2380,32 +2379,14 @@ body::after {
   /* ---------- Sticky mobile donate bar ---------- */
   .mobile-donate {
     display: block;
-    bottom: max(1rem, env(safe-area-inset-bottom));
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
 
   .mobile-donate .btn {
     min-height: 3.1rem;
     font-size: 0.98rem;
-  }
-
-  .mobile-donate.is-compact {
-    left: auto;
-    right: max(1.1rem, env(safe-area-inset-right));
-  }
-
-  .mobile-donate.is-compact .btn {
-    width: 3.75rem;
-    height: 3.75rem;
-    min-height: 0;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 0;
-    gap: 0;
-  }
-
-  .mobile-donate.is-compact .btn::before {
-    width: 1.5rem;
-    opacity: 1;
   }
   /* ---------- Lightbox ---------- */
   .lightbox-media {

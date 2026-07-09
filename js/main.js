@@ -233,6 +233,7 @@ const renderDonate = () => {
 
   const minAmount = Number(donationSlider.min || sliderConfig.min || 100);
   const maxAmount = Number(donationSlider.max || sliderConfig.max || 5000);
+  let qrRenderTimer = null;
   const normalizeAmount = (value) => {
     const numericValue = Number(value);
     if (!Number.isFinite(numericValue)) return minAmount;
@@ -240,11 +241,19 @@ const renderDonate = () => {
     return Math.min(maxAmount, Math.max(minAmount, roundedValue));
   };
 
-  const syncDonationAmount = (value) => {
-    const normalizedAmount = normalizeAmount(value);
-    if (donationSlider) donationSlider.value = String(normalizedAmount);
-    if (donationAmountInput) donationAmountInput.value = String(normalizedAmount);
-    renderQr(normalizedAmount);
+  const updateDonationCopy = (amountValue) => {
+    donationAmountLabel.textContent = `Rs ${amountValue.toLocaleString("en-IN")}`;
+    if (donationUpiText) {
+      donationUpiText.textContent =
+        upi ?
+          `Amount: Rs ${amountValue.toLocaleString("en-IN")} | Scan the QR to pay instantly`
+        : `Add your UPI ID in js/data/donate.js | Amount: Rs ${amountValue.toLocaleString("en-IN")}`;
+    }
+    if (donationUpiButton) {
+      donationUpiButton.href = paymentPage;
+      donationUpiButton.textContent =
+        upi ? "Continue to Secure Payment" : "Add UPI ID to enable";
+    }
   };
 
   const renderQr = (amount) => {
@@ -265,19 +274,28 @@ const renderDonate = () => {
         donationQrGrid.textContent = "QR code library unavailable";
       }
     }
+  };
 
-    donationAmountLabel.textContent = `Rs ${amountValue.toLocaleString("en-IN")}`;
-    if (donationUpiText) {
-      donationUpiText.textContent =
-        upi ?
-          `Amount: Rs ${amountValue.toLocaleString("en-IN")} | Scan the QR to pay instantly`
-        : `Add your UPI ID in js/data/donate.js | Amount: Rs ${amountValue.toLocaleString("en-IN")}`;
+  const syncDonationAmount = (value, { immediateQr = false } = {}) => {
+    const normalizedAmount = normalizeAmount(value);
+    if (donationSlider) donationSlider.value = String(normalizedAmount);
+    if (donationAmountInput) donationAmountInput.value = String(normalizedAmount);
+    updateDonationCopy(normalizedAmount);
+
+    if (qrRenderTimer) {
+      window.clearTimeout(qrRenderTimer);
+      qrRenderTimer = null;
     }
-    if (donationUpiButton) {
-      donationUpiButton.href = paymentPage;
-      donationUpiButton.textContent =
-        upi ? "Continue to Secure Payment" : "Add UPI ID to enable";
+
+    if (immediateQr) {
+      renderQr(normalizedAmount);
+      return;
     }
+
+    qrRenderTimer = window.setTimeout(() => {
+      renderQr(normalizedAmount);
+      qrRenderTimer = null;
+    }, 120);
   };
 
   donationSlider.addEventListener("input", () => {
@@ -292,14 +310,14 @@ const renderDonate = () => {
 
     donationAmountInput.addEventListener("blur", () => {
       if (donationAmountInput.value.trim() === "") {
-        syncDonationAmount(donationSlider.value);
+        syncDonationAmount(donationSlider.value, { immediateQr: true });
         return;
       }
-      syncDonationAmount(donationAmountInput.value);
+      syncDonationAmount(donationAmountInput.value, { immediateQr: true });
     });
   }
 
-  syncDonationAmount(donationSlider.value);
+  syncDonationAmount(donationSlider.value, { immediateQr: true });
 };
 
 renderPrograms();
@@ -459,21 +477,6 @@ if (galleryItems.length) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeLightbox();
   });
-}
-
-const mobileDonate = document.querySelector(".mobile-donate");
-const siteFooter = document.querySelector(".site-footer");
-
-if (mobileDonate && siteFooter) {
-  const footerObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        mobileDonate.classList.toggle("is-compact", entry.isIntersecting);
-      });
-    },
-    { threshold: 0, rootMargin: "0px 0px -10% 0px" },
-  );
-  footerObserver.observe(siteFooter);
 }
 
 programExpandButtons.forEach((button) => {
