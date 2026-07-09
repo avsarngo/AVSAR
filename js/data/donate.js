@@ -1,7 +1,7 @@
 window.AVSAR_DONATE_DATA = {
   upi: "12139286@cbin",
   slider: {
-    min: 100,
+    min: 1,
     max: 5000,
     step: 50,
     defaultAmount: 599,
