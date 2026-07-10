@@ -55,7 +55,6 @@
 
 .home-stats,
 .home-programs,
-.home-gallery,
 .home-faq {
   background: var(--color-surface);
 }
@@ -64,26 +63,8 @@
   background: linear-gradient(180deg, #f3faf1 0%, #e9f4e7 100%);
 }
 
-.home-volunteer .cta-band {
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(238, 244, 234, 0.18),
-      transparent 26%
-    ),
-    linear-gradient(135deg, rgba(47, 127, 76, 0.96), rgba(63, 138, 87, 0.94));
-}
-
 .home-testimonials .testimonial-card {
   background: rgba(238, 244, 234, 0.96);
-}
-
-.home-journey .timeline::before {
-  background: linear-gradient(
-    180deg,
-    rgba(47, 127, 76, 0.42),
-    rgba(79, 143, 97, 0.32)
-  );
 }
 
 .home-story .story-quote {

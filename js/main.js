@@ -23,7 +23,6 @@ let donationBankIfsc = null;
 let donationBankBranch = null;
 let donationBankNote = null;
 let galleryItems = [];
-let programExpandButtons = [];
 
 const programToneClassMap = {
   education: "tone-education",
@@ -32,6 +31,23 @@ const programToneClassMap = {
   skills: "tone-skills",
   environment: "tone-sdg",
   rural: "tone-community",
+};
+
+const galleryThemeClassMap = {
+  education: "theme-education",
+  healthcare: "theme-healthcare",
+  women: "theme-women",
+  skills: "theme-skills",
+  environment: "theme-environment",
+  rural: "theme-rural",
+};
+
+const eventThemeClassMap = {
+  rural: "theme-rural",
+  community: "theme-rural",
+  environment: "theme-environment",
+  nature: "theme-environment",
+  story: "theme-story",
 };
 
 const programIconMap = {
@@ -126,7 +142,10 @@ const renderEvents = () => {
             return `
           <article class="event-recap card" data-animate>
             <div
-              class="event-recap__media theme-${event.theme || "story"}"
+              class="event-recap__media ${
+                eventThemeClassMap[event.theme] ||
+                `theme-${event.theme || "story"}`
+              }"
               style="--event-ratio: ${ratio}"
             >
               ${
@@ -327,7 +346,6 @@ animatedItems.forEach((item, index) => {
   item.style.setProperty("--reveal-delay", `${Math.min(index * 60, 420)}ms`);
 });
 galleryItems = document.querySelectorAll(".gallery-item");
-programExpandButtons = document.querySelectorAll(".program-expand-toggle");
 
 const setHeaderState = () => {
   if (!header) return;
@@ -503,7 +521,8 @@ if (galleryItems.length) {
 
   galleryItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const theme = themeClassMap[item.dataset.theme] || "theme-story";
+      const theme =
+        galleryThemeClassMap[item.dataset.theme] || "theme-story";
       lightboxMedia.className = `lightbox-media ${theme}`;
       lightboxTitle.textContent = item.dataset.title || "Impact Story";
       lightboxText.textContent =
@@ -526,19 +545,6 @@ if (galleryItems.length) {
     if (event.key === "Escape") closeLightbox();
   });
 }
-
-programExpandButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".program-card");
-    if (!card) return;
-    const details = card.querySelector(".program-details");
-    if (!details) return;
-    const isExpanded = card.classList.toggle("expanded");
-    details.hidden = !isExpanded;
-    button.textContent = isExpanded ? "Show Less" : "Read More";
-    button.setAttribute("aria-expanded", String(isExpanded));
-  });
-});
 
 demoForms.forEach((form) => {
   form.addEventListener("submit", async (event) => {
