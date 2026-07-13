@@ -454,10 +454,31 @@ body.has-announcement .site-announcement {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: clamp(0.72rem, 1.75vw, 0.9rem);
   font-weight: 600;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.96);
+}
+
+.site-announcement__message {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  white-space: nowrap;
+  font: inherit;
+}
+
+.site-announcement__text,
+.site-announcement__note,
+.site-announcement__link {
+  font: inherit;
+}
+
+.site-announcement__note {
+  opacity: 0.9;
 }
 
 .site-announcement a {
@@ -480,7 +501,7 @@ body.has-announcement .site-announcement {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.site-announcement__track:hover {
+.site-announcement.is-paused .site-announcement__track {
   animation-play-state: paused;
 }
 

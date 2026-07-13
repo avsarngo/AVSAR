@@ -147,6 +147,20 @@ const setupAnnouncementBar = async () => {
     }
 
     document.body.classList.add("has-announcement");
+    let resumeTimer = null;
+
+    const setAnnouncementPaused = (isPaused) => {
+      announcementBar.classList.toggle("is-paused", isPaused);
+    };
+
+    const pauseAnnouncementTemporarily = () => {
+      window.clearTimeout(resumeTimer);
+      setAnnouncementPaused(true);
+      resumeTimer = window.setTimeout(() => {
+        setAnnouncementPaused(false);
+        resumeTimer = null;
+      }, 2000);
+    };
 
     const setAnnouncementMetrics = () => {
       const track = announcementBar.querySelector(".site-announcement__track");
@@ -165,6 +179,9 @@ const setupAnnouncementBar = async () => {
     };
 
     setAnnouncementMetrics();
+    announcementBar.addEventListener("pointerdown", pauseAnnouncementTemporarily);
+    announcementBar.addEventListener("click", pauseAnnouncementTemporarily);
+    announcementBar.addEventListener("focusin", pauseAnnouncementTemporarily);
     window.addEventListener("resize", setAnnouncementMetrics, {
       passive: true,
     });
