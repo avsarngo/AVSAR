@@ -661,6 +661,7 @@ if (galleryItems.length) {
   const lightboxMedia = lightbox.querySelector(".lightbox-media");
   const lightboxTitle = lightbox.querySelector(".lightbox-title");
   const lightboxText = lightbox.querySelector(".lightbox-text");
+  const lightboxClose = lightbox.querySelector(".lightbox-close");
 
   const closeLightbox = () => lightbox.classList.remove("open");
 
@@ -683,11 +684,9 @@ if (galleryItems.length) {
     });
   });
 
+  lightboxClose.addEventListener("click", closeLightbox);
   lightbox.addEventListener("click", (event) => {
-    if (
-      event.target === lightbox ||
-      event.target.classList.contains("lightbox-close")
-    ) {
+    if (event.target === lightbox) {
       closeLightbox();
     }
   });
